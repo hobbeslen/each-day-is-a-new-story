@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulación de Llamada Interactiva</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    header, footer { background: #333; color: white; padding: 1rem; text-align: center; }
+    video { width: 100%; height: auto; object-fit: cover; }
+    #camOverlay {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 150px;
+      height: 100px;
+      background: black;
+      border: 2px solid white;
+    }
+    .content { padding: 1rem; }
+    .dropdown, .random-response, .text-check, .downloads { margin: 2rem 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Proyecto Interactivo</h1>
+  </header>
+
+  <div id="videoContainer" style="position: relative;">
+    <video id="mainVideo" autoplay muted playsinline></video>
+    <video id="camOverlay" autoplay muted playsinline></video>
+  </div>
+
+  <div class="content">
+    <div class="dropdown">
+      <label for="menuSelect">Selecciona una opción:</label>
+      <select id="menuSelect">
+        <option value="1">Opción 1</option>
+        <option value="2">Opción 2</option>
+      </select>
+    </div>
+
+    <div class="random-response">
+      <button onclick="pickRandomOption()">Escoger opción aleatoria</button>
+      <p id="randomOutput"></p>
+    </div>
+
+    <div class="text-check">
+      <textarea id="userInput" rows="4" cols="50" placeholder="Escribe aquí..."></textarea>
+      <button onclick="checkSimilarity()">Verificar texto</button>
+      <p id="matchResult"></p>
+    </div>
+
+    <div class="downloads">
+      <a href="documentos/proyecto.pdf" download>Descargar PDF del Proyecto</a>
+      <p>Explicación visual: (Aquí iría una imagen o descripción)</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Proyecto desarrollado por [Tu Nombre]</p>
+  </footer>
+
+  <script>
+    // Lista de videos
+    const videoList = [
+      'videos/video1.mp4',
+      'videos/video2.mp4',
+      'videos/video3.mp4'
+    ];
+
+    const mainVideo = document.getElementById('mainVideo');
+    const camOverlay = document.getElementById('camOverlay');
+
+    // Cargar video aleatorio
+    function loadRandomVideo() {
+      const randomVideo = videoList[Math.floor(Math.random() * videoList.length)];
+      mainVideo.src = randomVideo;
+    }
+
+    // Activar cámara y micro
+    async function enableCamera() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+        camOverlay.srcObject = stream;
+      } catch (e) {
+        alert('No se pudo acceder a la cámara/micrófono');
+      }
+    }
+
+    loadRandomVideo();
+    enableCamera();
+
+    // Opciones aleatorias
+    const opciones = ['Respuesta 1', 'Respuesta 2', 'Respuesta 3', 'Respuesta 4', 'Respuesta 5'];
+
+    function pickRandomOption() {
+      const index = Math.floor(Math.random() * opciones.length);
+      document.getElementById('randomOutput').textContent = opciones[index];
+    }
+
+    // Verificar texto contra las opciones
+    function checkSimilarity() {
+      const input = document.getElementById('userInput').value.toLowerCase();
+      const match = opciones.find(op => input.includes(op.toLowerCase()));
+      document.getElementById('matchResult').textContent = match ? `Coincidencia: ${match}` : 'No hay coincidencias';
+    }
+  </script>
+</body>
+</html>
