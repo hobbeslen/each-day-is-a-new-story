@@ -1,0 +1,41 @@
+LICENCIA DEL PROYECTO "Simulación Interactiva Tipo Llamada"
+
+Este proyecto contiene tanto código fuente como contenido artístico. Cada tipo tiene condiciones de uso distintas:
+
+──────────────────────────────────────────────
+🔹 CÓDIGO FUENTE (HTML, CSS, JS)
+──────────────────────────────────────────────
+Licencia: Creative Commons Atribución-NoComercial-CompartirIgual 4.0 (CC BY-NC-SA 4.0)
+
+Permisos:
+✔ Puedes estudiar y reutilizar el código fuente.
+✔ Puedes adaptarlo para tus propios proyectos.
+✔ Puedes compartir tu versión siempre que:
+   - No sea con fines comerciales.
+   - Des el crédito al autor original.
+   - Mantengas la misma licencia.
+
+──────────────────────────────────────────────
+🔴 CONTENIDO VISUAL Y ARTÍSTICO
+(Imágenes, ilustraciones, videos, archivos PDF)
+
+Licencia: TODOS LOS DERECHOS RESERVADOS
+
+🚫 No puedes:
+- Descargar, copiar ni reutilizar los contenidos visuales.
+- Publicarlos en ningún otro sitio o plataforma.
+- Modificarlos o usarlos como base de ningún otro trabajo.
+- Utilizarlos, ni total ni parcialmente, con ningún fin, sea comercial o personal.
+
+Estos elementos son propiedad exclusiva del autor y están protegidos por la legislación internacional de derechos de autor.
+
+──────────────────────────────────────────────
+🔹 OBJETIVO DEL PROYECTO
+
+Este sitio busca:
+- Inspirar y educar.
+- Generar comunidad y diálogo creativo, sin permitir la explotación del contenido visual.
+
+Si deseas colaborar, aprender más o pedir permisos especiales, puedes contactar al autor:
+
+📩 Contacto: semoreno@uan.edu.co
